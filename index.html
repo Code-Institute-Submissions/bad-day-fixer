@@ -10,17 +10,24 @@
     <title>Test for MS2</title>
 </head>
 <body>
-    <h1> Hello, are you having a bad day?</h1>
+    <h1> Hello, we heard you are having a suboptimal day.<br><br> Would you like us to fix it?</h1>
     <button id="option1yes"> Yes </button> <button id="option1no">No</button>
     
     <div id="option1-yes" class="hidden">
         <h1>What upset you today?</h1>
-         <form action="/action_page.php">
-            <label for="fname">Enter Your Worry:</label>
-                <input type="text" id="worries" name="worries"><br><br>
-                <input type="submit" value="Submit" onclick="formdata()"/><br>
+         <form id="myform"> 
+            <p>Enter Your Worry:
+                <input type="text" id="worries" value=""><br><br>
+                <input type= "submit" onclick="showInput();return false" value="submit"><br><br>
+               <h1>My worries are: <span id = "display_worries"></span> </h1>
+            </p>
         </form>
     </div>
+    
+
+
+<!-- SPACE FACTS ( IF USER DOES NOT WANT TO FIX BAD DAY ) -->
+
 
     <div id="option1-no" class="hidden">
         <h1>Space Facts</h1>
@@ -29,7 +36,11 @@
             grand scale of things...?</p>
     </div>
 
+    <div id="self-care" class="hidden">
+        <h1> Self-Care Tips </h1>
+        <p id="form-content"> </p>
 
+    </div>
 
 </body>
 <script src="assets/js/code.js"></script>
