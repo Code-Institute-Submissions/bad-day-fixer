@@ -1,3 +1,6 @@
+/* FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 */ 
+
+
 var btnYes = document.getElementById('option1yes');
 var btnNo  = document.getElementById('option1no');
 var optYes = document.getElementById('option1-yes');
@@ -14,6 +17,8 @@ btnNo.addEventListener('click', function(){
 });
 
 
+/* TRYING TO MAKE GIF APPEAR WHEN FORM SUBMIT BUTTON IS CLICKED. I FOUND THE CODE FOR THIS ON https://www.sitepoint.com/community/t/show-a-gif-on-button-click-then-hide-it/43049/9  */
+
  $.fn.center = function () {
         this.css("position","absolute");
         this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
@@ -21,16 +26,15 @@ btnNo.addEventListener('click', function(){
         return this;
       }
 
-      $("#summonPokemon").on("click", function(){
-        $("#pokemon").fadeIn().center();
+      function showgif(){
+        $("#explosion").fadeIn().center();
         setTimeout(function(){
-          $("#pokemon").fadeOut()
+          $("#explosion").fadeOut()
         }, 1000);
-      });
+      };
 
 
-
-
+/* FUNCTION TO SHOW QUESTION 2 AFTER 'SUBMIT' BUTTON IS CLICKED */ 
 
 function showQuestion2() {
     var div = document.getElementById('question2');
