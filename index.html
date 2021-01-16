@@ -3,27 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script type="text/javascript"></script>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+
     <title>Test for MS2</title>
 </head>
+
+    <header>
+        <nav class="navigation-bar">
+            <a class="active" href="#home">Home</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#about">About This Website</a>
+        </nav>
+    </header>
+
 <body>
-    <h1> Hello, we heard you are having a suboptimal day.<br><br> Would you like us to fix it?</h1>
-    <button id="option1yes"> Yes </button> <button id="option1no">No</button>
+    <div class="container text-center">  
+        <img src="assets/images/badday.jpg" 
+             class="img-responsive" alt="Responsive image" 
+             width="307" height="240" /> 
+    </div> 
+
+    <div class="container q1 text-center"> 
+        <h1 class="main"> Are you having a bad day? </h1> <br>
+        <p class="question-one">Would you like us to fix it?</p>
+        <button id="option1yes"> Yes </button> 
+        <button id="option1no">No</button>
+    </div>
     
     <div id="option1-yes" class="hidden">
         <h1>What upset you today?</h1>
-         <form id="myform"> 
-            <p>Enter Your Worry:
+         <form id="myform" onsubmit="showQuestion2();return false"> 
+            <p class="center">Enter Your Worry: <br>
                 <input type="text" id="worries" value=""><br><br>
-                <input type= "submit" onclick="showInput();return false" value="submit"><br><br>
-               <h1>My worries are: <span id = "display_worries"></span> </h1>
+                <input type= "submit" value="submit"><br><br>
             </p>
         </form>
     </div>
+
+
+
+    <div><button id="summonPokemon">Change pokemon!</button></div>
+    <img src="http://static.tumblr.com/46cb5b1d63cf84148220815beac16919/sqjwi15/uQCn06vx6/tumblr_static_tumblr_mmff7iuxxv1qhd8sao1_500.gif" class="hidden" id="pokemon">
+
+
+
     
+    <div id="question2" class="container q1 text-center" style="display:none"> 
+        <h1> Thanks for sharing! <br> Would you be interested in trying some self care activities?</h1><br>
+        <button id="option2yes"> Yes </button> 
+        <button id="option2no">No</button>
+    </div>
 
 
 <!-- SPACE FACTS ( IF USER DOES NOT WANT TO FIX BAD DAY ) -->
@@ -42,7 +75,11 @@
 
     </div>
 
+
+
+
 </body>
+
 <script src="assets/js/code.js"></script>
 
 </html>

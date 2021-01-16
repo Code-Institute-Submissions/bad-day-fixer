@@ -14,10 +14,32 @@ btnNo.addEventListener('click', function(){
 });
 
 
+ $.fn.center = function () {
+        this.css("position","absolute");
+        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+        return this;
+      }
 
-function showInput() {
-    var worries=document.getElementById("worries").value
-    display_worries.innerHTML= worries;
-    
-}
+      $("#summonPokemon").on("click", function(){
+        $("#pokemon").fadeIn().center();
+        setTimeout(function(){
+          $("#pokemon").fadeOut()
+        }, 1000);
+      });
+
+
+
+
+
+function showQuestion2() {
+    var div = document.getElementById('question2');
+   if (div.style.display == 'none') {
+     div.style.display = '';
+   }
+   else {
+     div.style.display = 'none';
+   }
+ }
+
 

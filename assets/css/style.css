@@ -1,1 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@300;400&display=swap');
+
+/* NAVIGATION BAR */
+
+.navigation-bar{
+  background-color:#D3D3D3;
+  overflow: hidden;
+}
+
+.navigation-bar a {
+  float: left;
+  color: #A9A9A9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navigation-bar a:hover {
+  background-color:#A9A9A9;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.navigation-bar a.active {
+  background-color: black;
+  color: white;
+}
+
+
+
+/* BODY */
+
 .hidden{ display: none; }
+
+h1 {
+    font-family:'Lato', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 300;
+}
+p{
+    font-family:'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+button {
+    
+    border: 2px solid black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 30px;
+    cursor: pointer;
+}
+   
+div.q1{
+    margin-bottom: 50px;
+}
+
+
+#myform p{
+    text-align: center;
+    padding: 20px;
+
+
+}
+
+input[type=submit]{
+
+    border: 2px solid black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+input[type=text]
+{
+    height: 100px;
+    width: 500px;
+    font-size:14pt;
+    text-align:center;
+    margin: 10px;
+    margin-top: 20px;
+
+}
+
+
+
