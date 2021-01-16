@@ -33,25 +33,21 @@
         <button id="option1yes"> Yes </button> 
         <button id="option1no">No</button>
     </div>
+
+    <!-- SUBMIT WORRIES ( IF USER DOES WANT TO FIX BAD DAY ) -->
+
     
     <div id="option1-yes" class="hidden">
         <h1>What upset you today?</h1>
-         <form id="myform" onsubmit="showQuestion2();return false"> 
+         <form id="myform" onsubmit="showQuestion2();return false;showgif()"> 
             <p class="center">Enter Your Worry: <br>
                 <input type="text" id="worries" value=""><br><br>
-                <input type= "submit" value="submit"><br><br>
+                <button type= "submit" value="submit" id="summongif">Submit</button><br><br>
+                    <img src="https://media.giphy.com/media/LOzG6sOM9S0Q8/giphy.gif" class="hidden" id="explosion">
             </p>
         </form>
     </div>
 
-
-
-    <div><button id="summonPokemon">Change pokemon!</button></div>
-    <img src="http://static.tumblr.com/46cb5b1d63cf84148220815beac16919/sqjwi15/uQCn06vx6/tumblr_static_tumblr_mmff7iuxxv1qhd8sao1_500.gif" class="hidden" id="pokemon">
-
-
-
-    
     <div id="question2" class="container q1 text-center" style="display:none"> 
         <h1> Thanks for sharing! <br> Would you be interested in trying some self care activities?</h1><br>
         <button id="option2yes"> Yes </button> 
@@ -68,6 +64,10 @@
             really small & your problems. How important is whatever ruined your day in the 
             grand scale of things...?</p>
     </div>
+
+
+<!-- SELF CARE TIPS ( IF USER CLICKED QUESTION 2 YES  ) -->
+
 
     <div id="self-care" class="hidden">
         <h1> Self-Care Tips </h1>
