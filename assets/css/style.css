@@ -4,7 +4,7 @@
 /* NAVIGATION BAR */
 
 .navigation-bar{
-  background-color:#D3D3D3;
+  background-color: black;
   overflow: hidden;
 }
 
@@ -12,21 +12,21 @@
   float: left;
   color: #A9A9A9;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 10px;
   text-decoration: none;
   font-size: 17px;
 }
 
 /* Change the color of links on hover */
 .navigation-bar a:hover {
-  background-color:#A9A9A9;
-  color: black;
+  background-color:white;
+  color: red
 }
 
 /* Add a color to the active/current link */
 .navigation-bar a.active {
   background-color: black;
-  color: white;
+  color:red;
 }
 
 
@@ -48,10 +48,10 @@ p{
     font-weight: 300;
 }
 
-button {
+button  {
     
     border: 2px solid black;
-    padding: 15px 32px;
+    padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -88,7 +88,7 @@ input[type=submit]{
 input[type=text]
 {
     height: 100px;
-    width: 500px;
+    width: 200px;
     font-size:14pt;
     text-align:center;
     margin: 10px;
@@ -97,4 +97,159 @@ input[type=text]
 }
 
 
+img#gif { 
 
+    width: 300px;
+    height: auto;
+
+}
+
+/* CAROUSEL */
+
+
+
+/* NEXT BUTTON */
+
+
+div#next {
+
+    text-align:center;
+}
+
+
+/* GRATITUDE LIST */
+
+
+/* STYLING DROPDOWN */
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+select{
+    color: #c065c0;
+    width: 8rem;
+    cursor: pointer;
+    padding: 0.7rem;
+}
+.select::after{
+    content: "\25bc";
+    position: absolute;
+    color: #c065c0;
+    top: 7px;
+    right: 6px;
+    pointer-events: none;
+}
+.select:hover::after{
+   color: #583429;
+}
+
+/* STYLING CONTAINER WHERE THE TASKS ARE SHOWN */
+.gratitude_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gratitude_list{
+    min-width: 40%;
+    list-style: none;
+}
+
+.gratitude-form{
+    text-align: center;
+}
+
+
+.gratitude{
+    margin: 5px auto;
+    background: white;
+    color: #000000;
+    display: flex;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.gratitude li {
+    flex: 1;
+}
+
+/* STYLING THE BUTTON ON THE TASK */
+ 
+.delete_btn{
+    padding: 0.5rem;
+    background: #979696;
+    color: white;
+    border: none;
+    margin-left: 0.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+.delete_btn:active{
+    background: #b65337;
+}
+
+.fa-trash{
+    pointer-events: none;
+}
+
+
+/* DELETING THE TASKS */
+.fall{
+    transform: translateY(4rem) scale(0.4) rotateZ(20deg);
+    opacity: 0;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+div#small-device-text1,
+div#small-device-text2,
+div#small-device-text3{
+    display: none;
+}
+
+
+}
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+div#small-device-text1,
+div#small-device-text2,
+div#small-device-text3{
+    display: none;
+}
+
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+div#small-device-text1,
+div#small-device-text2,
+div#small-device-text3{
+    display: none;
+}
+
+}
