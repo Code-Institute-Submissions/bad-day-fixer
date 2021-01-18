@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/99f2f640c0.js" crossorigin="anonymous"></script>
 
-    <title>Test for MS2</title>
+    <title>Bad Day Fixer</title>
+
 </head>
 
     <header>
@@ -21,7 +20,7 @@
     </header>
 
 <body>
-    <div class="container text-center">  
+    <div class="image-container text-center">  
         <img src="assets/images/badday.jpg" 
              class="img-responsive" alt="Responsive image" 
              width="307" height="240" /> 
@@ -39,14 +38,22 @@
     
     <div id="option1-yes" class="hidden">
         <h1>What upset you today?</h1>
-         <form id="myform" onsubmit="showQuestion2();return false;showgif()"> 
+         <form id="myform"> 
             <p class="center">Enter Your Worry: <br>
                 <input type="text" id="worries" value=""><br><br>
-                <button type= "submit" value="submit" id="summongif">Submit</button><br><br>
-                    <img src="https://media.giphy.com/media/LOzG6sOM9S0Q8/giphy.gif" class="hidden" id="explosion">
+                <button type= "button" value="submit" id="summongif">Submit</button><br><br>
+                    
             </p>
+
         </form>
     </div>
+
+
+    <div id="gif-container" class="container text-center hidden">
+        <img id="gif" src="https://media.giphy.com/media/9Y1CreFnfKNPOkuIGX/giphy.gif">
+    </div>
+        
+    
 
     <div id="question2" class="container q1 text-center" style="display:none"> 
         <h1> Thanks for sharing! <br> Would you be interested in trying some self care activities?</h1><br>
@@ -69,15 +76,96 @@
 <!-- SELF CARE TIPS ( IF USER CLICKED QUESTION 2 YES  ) -->
 
 
-    <div id="self-care" class="hidden">
-        <h1> Self-Care Tips </h1>
-        <p id="form-content"> </p>
+    <div class="bd-example carousel hidden" id="self-care">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/images/yoga-img.jpg" class="d-block w-100" alt="image of woman doing yoga">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>TRY SOME YOGA</h5>
+                        <p>It is really easy to pop on a youtube video (my favorites are Yoga with Adrienne) and do some yoga and you will immediately feel better.
+                            There's Yoga for Stressful days, Weightloss, Back-Pain, Good-Night and Good-Morning Yoga. I promise, you will find something you enjoy. 
+                        </p>
+                        </div>
+                        <div id="small-device-text1"> <p>It is really easy to pop on a youtube video (my favorites are Yoga with Adrienne) and do some yoga and you will immediately feel better.
+                            There's Yoga for Stressful days, Weightloss, Back-Pain, Good-Night and Good-Morning Yoga. I promise, you will find something you enjoy.  </p>
+                        </div>
 
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/walking-img.jpg" class="d-block w-100" alt="Image of walking path in nature">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>TAKE A WALK</h5>
+                        <p>Walking has physical benefits such as increased oxygen intake, revved-up circulation, a healthy heart and calorie burning as well as mental health benefits, 
+                            shedding stress and enhancing calm energy.</p>
+                        </div>
+                        <div id="small-device-text2"> <p>Walking has physical benefits such as increased oxygen intake, revved-up circulation, a healthy heart and calorie burning as well as mental health benefits, 
+                            shedding stress and enhancing calm energy.</p>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/reading-img.png" class="d-block w-100" alt="woman reading a book">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>READ A BOOK</h5>
+                        <p>It does not have to be Ulysses or some 2k page educational masterpiece - just pick a book you think you'd truly enjoy and start reading it while sipping on a cup of tea or wine.</p>
+                        </div>
+                    <div id="small-device-text3"> <p>It does not have to be Ulysses or some 2k page educational masterpiece - just pick a book you think you'd truly enjoy and start reading it while sipping on a cup of tea or wine. </p>
+                    </div>
+        </div>
     </div>
 
+            <a class="carousel-control-prev font-icon" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next font-icon" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+
+             </div>
+             <div id="next">
+                    <button id="next-button">Next</button>
+             </div>
+    </div>
+
+            <!-- GRATITUDE LIST  -->
 
 
 
+    <div id="gratitude" class="hidden"> 
+        
+        <p>I hope you were able to forget about [ WORRIES ] </p> <br> <h1> we would like you to think about 5 things in your life you are greatful for: </h1>
+
+            <!-- INPUT FIELD TO ENTER TASK AND DROPDOWN FILTER -->
+
+    <div class="grat-form">
+    <form class="center">
+        <input type="text" placeholder="Enter it here..." class="gratitude_input" />
+        <button class="gratitude_button" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
+    </form>
+    </div>
+
+    <!-- CONTAINER FOR DISPLAYING TO-DO LIST BY ADDING TASKS DYNAMICALLY USING JAVASCRIPT -->
+
+    <div class="gratitude_container">
+        <ul class="gratitude_list"></ul>
+    </div>
+        
+
+</div>
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 <script src="assets/js/code.js"></script>
