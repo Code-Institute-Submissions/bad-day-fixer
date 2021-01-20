@@ -13,30 +13,46 @@
 
     <header>
         <nav class="navigation-bar">
-            <a class="active" href="#home">Home</a>
-            <a href="#contact">Contact Us</a>
-            <a href="#about">About This Website</a>
+            <a class="active" href="index.html"> Home </a>
+            <a href="#about">About</a>
+            <a href="#contact">Write Us</a>
         </nav>
     </header>
 
 <body>
+
     <div class="image-container text-center">  
         <img src="assets/images/badday.jpg" 
              class="img-responsive" alt="Responsive image" 
              width="307" height="240" /> 
     </div> 
 
-    <div class="container q1 text-center"> 
-        <h1 class="main"> Are you having a bad day? </h1> <br>
-        <p class="question-one">Would you like us to fix it?</p>
-        <button id="option1yes"> Yes </button> 
-        <button id="option1no">No</button>
+        <!-- QUESTION 1 -->
+
+
+    <div class="container question-1 text-center"> 
+        <h1 class="main"> Are you having a bad day? </h1> 
+        <button id="button-badday-yes"> Yes </button> 
+        <button id="button-badday-no" onclick="window.open('https://www.thesun.ie/')">No</button>
+    </div>
+
+    <div class="container text-center hidden" id="option-news"> 
+        <p>And now?</p>
+    </div>
+
+        <!-- QUESTION 2 -->
+
+
+    <div class="container option-question-2 text-center hidden" id="option-question-2">
+        <h1 class="question-one">Would you like us to fix it?</h1>
+        <button id="button-fix-yes"> Yes </button> 
+        <button id="button-fix-no">No</button>
     </div>
 
     <!-- SUBMIT WORRIES ( IF USER DOES WANT TO FIX BAD DAY ) -->
 
     
-    <div id="option1-yes" class="hidden">
+    <div id="option-fix-yes" class="hidden">
         <h1>What upset you today?</h1>
          <form id="myform"> 
             <p class="center">Enter Your Worry: <br>
@@ -65,7 +81,7 @@
 <!-- SPACE FACTS ( IF USER DOES NOT WANT TO FIX BAD DAY ) -->
 
 
-    <div id="option1-no" class="hidden">
+    <div id="option-space-facts" class="hidden">
         <h1>Space Facts</h1>
         <p>The brilliant thing about learning about the universe is that it will make you feel 
             really small & your problems. How important is whatever ruined your day in the 
@@ -140,7 +156,7 @@
 
     <div id="gratitude" class="hidden"> 
         
-        <p>I hope you were able to forget about [ WORRIES ] </p> <br> <h1> we would like you to think about 5 things in your life you are greatful for: </h1>
+        <p>I hope you were able to forget about <span id="put-worries"> </span> </p> <br> <h1> we would like you to think about 5 things in your life you are greatful for: </h1>
 
             <!-- INPUT FIELD TO ENTER TASK AND DROPDOWN FILTER -->
 
