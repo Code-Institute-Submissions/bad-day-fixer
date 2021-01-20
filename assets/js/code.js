@@ -1,26 +1,47 @@
 /* FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 */ 
 
+var btn1Yes = document.getElementById('button-badday-yes');
+var btn1No  = document.getElementById('button-badday-no');
+var opt1Yes = document.getElementById('option-question-2');
+var opt1No  = document.getElementById('option-news');
 
-var btnYes = document.getElementById('option1yes');
-var btnNo  = document.getElementById('option1no');
-var optYes = document.getElementById('option1-yes');
-var optNo  = document.getElementById('option1-no');
-
-btnYes.addEventListener('click', function(){
-  optYes.className = ''; 
-  optNo.className = 'hidden';
-  $("#badDayQuestion").hide();
-  $(".container.q1").hide()
+btn1Yes.addEventListener('click', function(){
+  opt1Yes.className = ''; 
+  opt1No.className = 'hidden';
+  $(".question-1").hide()
 });
 
-btnNo.addEventListener('click', function(){
-  optNo.className = '';
-  optYes.className = 'hidden';
-  $("#badDayQuestion").hide();
-  $(".container.q1").hide()
+btn1No.addEventListener('click', function(){
+  opt1No.className = ''; 
+  opt1Yes.className = 'hidden'
 });
 
-/* FUNCTION TO SHOW QUESTION 2 AFTER 'SUBMIT' BUTTON IS CLICKED */ 
+
+
+
+
+/* FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 2 */ 
+
+var btn2Yes = document.getElementById('button-fix-yes');
+var btn2No  = document.getElementById('button-fix-no');
+var opt2Yes = document.getElementById('option-fix-yes');
+var opt2No  = document.getElementById('option-space-facts');
+
+btn2Yes.addEventListener('click', function(){
+  opt2Yes.className = ''; 
+  opt2No.className = 'hidden';
+  $("#option-question-2").hide();
+});
+
+btn2No.addEventListener('click', function(){
+  opt2No.className = '';
+  opt2Yes.className = 'hidden';
+  $("#option-question-2").hide();
+});
+
+
+
+/* FUNCTION TO SHOW QUESTION 3 AFTER 'SUBMIT' BUTTON IS CLICKED */ 
 
 
  $("#summongif").click(function(){
@@ -43,26 +64,26 @@ btnNo.addEventListener('click', function(){
 
 })
 
-/* FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 2 */ 
+/* FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 3 */ 
 
 
-var btnYes2 = document.getElementById('option2yes');
-var btnNo2  = document.getElementById('option2no');
-var optYes2 = document.getElementById('self-care');
-var optNo2  = document.getElementById('option1-no');
+var btnYes3 = document.getElementById('option3yes');
+var btnNo3  = document.getElementById('option3no');
+var optYes3 = document.getElementById('self-care');
+var optNo3  = document.getElementById('option1-no');
 
-btnYes2.addEventListener('click', function(){
-  optYes2.className = ''; 
-  optNo2.className = 'hidden';
+btnYes3.addEventListener('click', function(){
+  optYes3.className = ''; 
+  optNo3.className = 'hidden';
   $("#badDayQuestion").hide();
   $(".container.q1").hide()
   $("#gif-container").hide()
   $(".image-container").hide();
 });
 
-btnNo2.addEventListener('click', function(){
-  optNo2.className = '';
-  optYes2.className = 'hidden';
+btnNo3.addEventListener('click', function(){
+  optNo3.className = '';
+  optYes3.className = 'hidden';
   $("#badDayQuestion").hide();
   $(".container.q1").hide()
   $("#gif-container").hide()
@@ -87,23 +108,12 @@ $('#next-button').click(function () {
 
 /* FUNCTION TO INSERT WORRIES INTO DIV */ 
 
+var getworries = localStorage.getItem('userWorries');
 
-//function getworriesfromlocalstorage(name) {
-  //  let li = document.createElement('p');
-  //  li.textContent = name;
-  //  return li;
+document.getElementById("put-worries").textContent= getworries
 
 
-//var getworries = localStorage.getItem('userWorries');
-//var testelement=getElementById("element")
-//testelement.appendChild("getworries")
-
-
-// var getworries = JSON.parse(localStorage.getItem('userWorries'));
-//console.log('userWorries');
-//var testelement=getElementById("element");
-// testelement.appendChild("getworries")
-
+/* GRATITUDE LIST */ 
 
 
 //selectors
