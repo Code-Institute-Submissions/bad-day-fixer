@@ -60,9 +60,12 @@ button  {
     cursor: pointer;
 }
    
-div.q1{
+.question-1,
+#option-question-2{
     margin-bottom: 50px;
+    text-align: center;
 }
+
 
 
 #myform p{
