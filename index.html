@@ -71,10 +71,10 @@
         
     
 
-    <div id="question2" class="container q1 text-center" style="display:none"> 
+    <div id="question3" class="container q1 text-center" style="display:none"> 
         <h1> Thanks for sharing! <br> Would you be interested in trying some self care activities?</h1><br>
-        <button id="option2yes"> Yes </button> 
-        <button id="option2no">No</button>
+        <button id="selfcare-yes"> Yes </button> 
+        <button id="selfcare-no">No</button>
     </div>
 
 
@@ -134,40 +134,42 @@
     </div>
 
 
-<!-- SELF CARE TIPS CAROUSEL ( IF USER CLICKED QUESTION 2 YES  ) -->
+<!-- SELF CARE TIPS CAROUSEL ( IF USER CLICKED QUESTION 2 YES  )  built with instructions from https://www.youtube.com/watch?v=gBzsE0oieio -->
+
+    <div id="selfcare-carousel" class="container hidden">
+
+        <div class= "carousel" >
+                    <div class="carousel__track-container">
+                        <ul class="carousel__track">
+                            <li class="carousel__slide current-slide">
+                                <img class="carousel__image" src="assets/images/1.png" alt="">
+                            </li>
+                            <li class="carousel__slide">
+                                <img class="carousel__image" src="assets/images/2.png" alt="">
+                            </li>
+                            <li class="carousel__slide">
+                                <img class="carousel__image" src="assets/images/3.png" alt="">
+                            </li>
+                            <li class="carousel__slide">
+                                <img class="carousel__image" src="assets/images/4.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+
+                        <button class="carousel__button carousel__button--right"><i class="fas fa-chevron-right"></i></button>
+                        <button class="carousel__button carousel__button--left"><i class="fas fa-chevron-left"></i></button>
 
 
-     <div class= "carousel" >
-                 <div class="carousel__track-container">
-                    <ul class="carousel__track">
-                        <li class="carousel__slide current-slide">
-                            <img class="carousel__image" src="assets/images/1.png" alt="">
-                        </li>
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src="assets/images/2.png" alt="">
-                        </li>
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src="assets/images/3.png" alt="">
-                        </li>
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src="assets/images/4.png" alt="">
-                        </li>
-                    </ul>
-                </div>
+                    <div class="carousel__nav">
+                        <button class="carousel__indicator current-slide"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
 
-                    <button class="carousel__button carousel__button--right"><i class="fas fa-chevron-right"></i></button>
-                    <button class="carousel__button carousel__button--left"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+            </div>
 
-
-                <div class="carousel__nav">
-                    <button class="carousel__indicator current-slide"></button>
-                    <button class="carousel__indicator"></button>
-                    <button class="carousel__indicator"></button>
-
-                </div>
-        </div>
-
-    
+    </div>
    
 
 
@@ -179,27 +181,38 @@
 
     <div id="gratitude" class="hidden"> 
         
-        <p>I hope you were able to forget about <span id="put-worries"> </span> </p> <br> <h1> we would like you to think about 5 things in your life you are greatful for: </h1>
+            <p>I hope you were able to forget about <span id="put-worries"> </span> </p> <br> <h1> we would like you to think about 5 things in your life you are greatful for: </h1>
 
-            <!-- INPUT FIELD TO ENTER TASK AND DROPDOWN FILTER -->
+                <!-- INPUT FIELD TO ENTER TASK AND DROPDOWN FILTER -->
 
-    <div class="grat-form">
-    <form class="center">
-        <input type="text" placeholder="Enter it here..." class="gratitude_input" />
-        <button class="gratitude_button" type="submit">
-            <i class="fas fa-plus-square"></i>
-        </button>
-    </form>
+        <div class="grat-form">
+        <form class="center">
+            <input type="text" placeholder="Enter it here..." class="gratitude_input" />
+            <button class="gratitude_button" type="submit">
+                <i class="fas fa-plus-square"></i>
+            </button>
+        </form>
+        </div>
+
+        <!-- CONTAINER FOR DISPLAYING TO-DO LIST BY ADDING TASKS DYNAMICALLY USING JAVASCRIPT -->
+
+        <div class="gratitude_container">
+            <ul class="gratitude_list"></ul>
+        </div>
+    
     </div>
 
-    <!-- CONTAINER FOR DISPLAYING TO-DO LIST BY ADDING TASKS DYNAMICALLY USING JAVASCRIPT -->
+    <div class="container" id="fortune-generator">
+        <div class="quotes">
+            <div class="quote-text" id="js-quote-text"></div>
+        </div>
+        <div class="controls">
+            <button type="button" id="js-new-quote" class="new-quote button"> Generate a new quote </button>
+        </div>
 
-    <div class="gratitude_container">
-        <ul class="gratitude_list"></ul>
     </div>
-        
 
-</div>
+
 
     
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
