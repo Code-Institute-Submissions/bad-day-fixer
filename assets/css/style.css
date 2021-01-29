@@ -33,6 +33,12 @@
 
 /* BODY */
 
+img.img-responsive{
+    z-index: 2;
+    position: relative;
+}
+
+
 .hidden{ display: none; }
 
 h1 {
@@ -109,6 +115,89 @@ img#gif {
 
 /* CAROUSEL */
 
+.carousel{
+    position: relative;
+    height:600px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel__image{
+width:100%;
+height:100%;
+object-fit: cover;
+}
+
+.carousel__track-container{
+    background-color: lightgreen;
+    height:100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__track{
+    padding:0;
+    margin:0;
+    list-style:none;
+    position:relative;
+    height:100%;
+    transform: 250ms ease-in;
+}
+
+.carousel__slide{
+    width: 100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+
+}
+
+.carousel__button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0 important!
+}
+
+
+.carousel__button--left{
+    left: -40px;
+}
+
+.carousel__button--right{
+    right: -40px;
+}
+
+.carousel__button img{
+    width: 12px;
+}
+
+button.carousel__indicator{
+    padding: 0 0 !important
+}
+
+.carousel__nav{
+    display:flex;
+    justify-content: center;
+    padding:10px 0; 
+}
+
+.carousel__indicator{
+    border:0;
+    border-radius: 50%;
+    width:15px;
+    height:15px;
+    background-color:rgba(0,0,0,.3);
+    margin:0 12px;
+}
+
+.carousel__indicator.current-slide{
+    background-color:rgba(0,0,0,.75);
+
+}
 
 
 /* NEXT BUTTON */
@@ -231,6 +320,81 @@ div#small-device-text3{
 
 
 }
+
+/*fortune cookie creator */
+
+
+#fortune-generator {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+header {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.quotes {
+  padding: 20px 50px;
+  min-height: 200px;
+}
+
+.quote-text {
+  padding-bottom: 20px;
+  font-size: 25px;
+  color: black;
+}
+
+.controls {
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.button {
+  display: block;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  margin: 0 !important
+}
+
+
+.new-quote {
+  background-color: black;
+  margin-bottom: 15px;
+}
+
+.new-quote:hover {
+  background-color: #6d3b0e;
+}
+
+.new-quote:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
 
 
 
