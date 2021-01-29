@@ -1,4 +1,4 @@
-/* FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 */ 
+/// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 
 
 var btn1Yes = document.getElementById('button-badday-yes');
 var btn1No  = document.getElementById('button-badday-no');
@@ -39,7 +39,7 @@ btn2No.addEventListener('click', function(){
 
 
 
-/* FUNCTION TO SHOW QUESTION 3 AFTER 'SUBMIT' BUTTON IS CLICKED */ 
+// FUNCTION TO SHOW QUESTION 3 AFTER 'SUBMIT' BUTTON IS CLICKED 
 
 
  $("#summongif").click(function(){
@@ -58,12 +58,30 @@ btn2No.addEventListener('click', function(){
   $(".container.q1").hide()
   $("#option1-yes").hide();
   $(".image-container").hide();
-  $("#question2").show();
+  $("#option-fix-yes").hide()
+  $("#question3").show();
 
 })
 
-// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 3  
+// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 3  (SELFCARE YES? / NO?)
 
+var btn3Yes = document.getElementById('selfcare-yes');
+var btn3No  = document.getElementById('selfcare-no');
+var opt3Yes = document.getElementById('selfcare-carousel');
+var opt3No  = document.getElementById('option-space-facts');
+
+btn3Yes.addEventListener('click', function(){
+  opt3Yes.className = ''; 
+  opt3No.className = 'hidden';
+  $("#question3").hide();
+  $("#gif-container").hide()
+});
+
+btn2No.addEventListener('click', function(){
+  opt2No.className = '';
+  opt2Yes.className = 'hidden';
+  $("#option-question-2").hide();
+});
 
 
 
@@ -94,13 +112,14 @@ document.getElementById("put-worries").textContent= getworries
 /* SELF CARE CAROUSEL */
 
 const track = document.querySelector('.carousel__track');
-const slides =Array.from(track.children);
+const slides = Array.from(track.children);
 const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
 const dotsNav = document.querySelector('.carousel__nav');
 const dots = Array.from(dotsNav.children);
 
 const slideWidth = slides[0].getBoundingClientRect().width;
+
 
 // put slides next to each other
 
@@ -111,7 +130,7 @@ slides.forEach(setSlidePosition);
 
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.style.transform =' translateX(-' + targetSlide.style.left + ')';
+    track.style.transform = 'translateX(-' + targetSlide.style.left + ')'
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
 }
@@ -147,6 +166,7 @@ prevButton.addEventListener('click', e => {
    
     moveToSlide(track, currentSlide, prevSlide)
     updateDots(currentDot, prevDot);
+
     hideShowArrows (slides, prevIndex, prevButton, nextButton)
 
 
@@ -159,6 +179,7 @@ nextButton.addEventListener('click', e => {
     const nextSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
     const nextDot= currentDot.nextElementSibling;
+
     const nextIndex = slides.findIndex(slide => slide === nextSlide)
 
     
@@ -181,6 +202,7 @@ dotsNav.addEventListener('click', e => {
     
 
     moveToSlide(track, currentSlide, targetSlide);
+
     updateDots(currentDot, targetDot);
     hideShowArrows(slides, targetIndex, prevButton, nextButton)
 
@@ -260,4 +282,41 @@ function deleteCheck(e) {
     }
 }
 
+// FORTUNE COOKIE GENERATOR
 
+
+const newQuoteButton = document.querySelector('#js-new-quote');
+newQuoteButton.addEventListener('click', getQuote);
+
+function getQuote() {
+  console.log("quote button was clicked");
+}
+
+const endpoint = 'https://bad-fortune-cookie.herokuapp.com/fortunes/?format=json'
+
+async function getQuote() {
+  // The `try` block executes the statements within it as usual.
+  // If an exception is thrown, the statements defined in
+  // the `catch` block will be executed.
+  // Learn more here: https://javascript.info/try-catch
+  try {
+    const response = await fetch(endpoint)
+    // If the response is not 200 OK...
+    if (!response.ok) {
+      // ...throw an error. This causes control flow
+      // to skip to the `catch` block below.
+      throw Error(response.statusText)
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (err) {
+    console.log(err)
+    alert('Failed to fetch new quote');
+  }
+}
+
+function displayQuote(quote) {
+  const quoteText = document.querySelector('#js-quote-text');
+  quoteText.textContent = quote;
+}
