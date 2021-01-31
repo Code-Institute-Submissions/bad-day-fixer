@@ -115,6 +115,14 @@ img#gif {
 
 /* CAROUSEL */
 
+
+.special-hide{
+   
+   position: absolute !important;
+    top: -9999px !important;
+   left: -9999px !important;
+}
+
 .carousel{
     position: relative;
     height:600px;
