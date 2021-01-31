@@ -209,7 +209,13 @@ dotsNav.addEventListener('click', e => {
     });
 
 
+// Event trigger when on last slide to show the 
 
+$('#selfcare-carousel').bind('slid', function (e) {
+    var index = $(e.target).find(".active").index();
+    if(index === 3) 
+        document.getElementById('nextButton');
+})
 
 
 
@@ -284,7 +290,7 @@ function deleteCheck(e) {
 
 // FORTUNE COOKIE GENERATOR
 
-
+/*
 const newQuoteButton = document.querySelector('#js-new-quote');
 newQuoteButton.addEventListener('click', getQuote);
 
@@ -309,7 +315,7 @@ async function getQuote() {
     }
 
     const json = await response.json();
-    console.log(json);
+    displayQuote(json);
   } catch (err) {
     console.log(err)
     alert('Failed to fetch new quote');
@@ -319,4 +325,26 @@ async function getQuote() {
 function displayQuote(quote) {
   const quoteText = document.querySelector('#js-quote-text');
   quoteText.textContent = quote;
+} */
+
+
+const baseURL = "	https://api.fungenerators.com";
+
+function getData(type, cb) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            cb(JSON.parse(this.responseText));
+        }
+    };
+
+    xhr.open("GET", baseURL + type + "/");
+    xhr.send();
+}
+
+function writeToDocument(type) {
+    getData(type, function(jsquotetext) {
+        document.getElementById("jsquotetext").innerHTML = jsquotetext;
+    })
 }
