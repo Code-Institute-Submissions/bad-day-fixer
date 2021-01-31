@@ -194,6 +194,18 @@
         </form>
         </div>
 
+
+        <!-- NEXT BUTTON TO LEAD TO GRATITUDE LIST -->
+
+        <button type= "button" value="submit" id="nextButton">Next</button><br><br>
+
+        <!-- INPUT DISPLAYED -->
+
+        <div class="container hidden" id="input-display">
+            <p> We hope you were able to forget about </p>
+        </div>
+
+
         <!-- CONTAINER FOR DISPLAYING TO-DO LIST BY ADDING TASKS DYNAMICALLY USING JAVASCRIPT -->
 
         <div class="gratitude_container">
@@ -202,12 +214,15 @@
     
     </div>
 
-    <div class="container" id="fortune-generator">
+        <!-- CONTAINER FOR DISPLAYING FORTUNE COOKIE GENERATOR -->
+
+
+    <div class="container hidden" id="fortune-generator">
         <div class="quotes">
-            <div class="quote-text" id="js-quote-text"></div>
+            <div class="quote-text" id="jsquotetext"></div>
         </div>
         <div class="controls">
-            <button type="button" id="js-new-quote" class="new-quote button"> Generate a new quote </button>
+            <button onclick="writeToDocument()" type="button" id="js-new-quote" class="new-quote button"> Generate a new quote </button>
         </div>
 
     </div>
