@@ -97,7 +97,7 @@ input[type=submit]{
 input[type=text]
 {
     height: 100px;
-    width: 200px;
+    width: 90%;
     font-size:14pt;
     text-align:center;
     margin: 10px;
@@ -304,23 +304,6 @@ select{
 }
 
 
-
-
-
-/* MEDIA QUERIES */
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-
-div#small-device-text1,
-div#small-device-text2,
-div#small-device-text3{
-    display: none;
-}
-
-
-}
-
 /*fortune cookie creator */
 
 
@@ -397,6 +380,19 @@ header {
 
 
 
+/* MEDIA QUERIES */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+div#small-device-text1,
+div#small-device-text2,
+div#small-device-text3{
+    display: none;
+}
+
+}
+
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
@@ -407,7 +403,8 @@ div#small-device-text3{
     display: none;
 }
 
-
+input[type=text] {
+    width: 100%;}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
