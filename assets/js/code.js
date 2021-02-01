@@ -100,12 +100,6 @@ $('#next-button').click(function () {
 
 })
 
-/* FUNCTION TO INSERT WORRIES INTO DIV */ 
-
-var getworries = localStorage.getItem('userWorries');
-
-document.getElementById("put-worries").textContent= getworries
-
 
 
 
@@ -146,9 +140,10 @@ const hideShowArrows = (slides, targetIndex, prevButton, nextButton) => {
       if (targetIndex === 0) {
         prevButton.classList.add('hidden')
         nextButton.classList.remove('hidden')
-    } else if (targetIndex === slides.lenght -1 ){
+    } else if (targetIndex === slides.length -1 ){
         prevButton.classList.remove('hidden')
         nextButton.classList.add('hidden')
+        document.querySelector('#GratitudeButton').classList.remove('hidden')
     } else {
         prevButton.classList.remove('hidden')
         nextButton.classList.remove('hidden')
@@ -209,15 +204,36 @@ dotsNav.addEventListener('click', e => {
     });
 
 
-// Event trigger when on last slide to show the 
+// Event trigger when on last slide to show a button 
 
 $('#selfcare-carousel').bind('slid', function (e) {
-    var index = $(e.target).find(".active").index();
-    if(index === 3) 
-        document.getElementById('nextButton');
+    var index = $(e.target).find(".current-slide").index();
+    if(targetIndex === slides.lenght -1) {
+    document.getElementById("GratitudeButton").innerHTML ='';
+    alert('slide4 displayed!')}
 })
 
 
+// Button to lead to gratitude list
+
+var nextBtnCarousel = document.getElementById('GratitudeButton');
+var fortuneCookiediv = document.getElementById ('gratitude')
+
+nextBtnCarousel.addEventListener('click', function(){
+  fortuneCookiediv.className = ''; 
+  $("#G2FButton").hide()
+  $("#option-space-facts").hide()
+  $("#selfcare-carousel").hide()
+  $(".question-1").hide()
+
+  
+});
+
+
+/* FUNCTION TO INSERT WORRIES INTO DIV */ 
+
+  let userFeedBack=localStorage.getItem("userWorries");
+  document.getElementById("put-worries").innerHTML = userFeedBack;
 
 
 
