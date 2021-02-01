@@ -138,7 +138,7 @@
 
 <!-- SELF CARE TIPS CAROUSEL ( IF USER CLICKED QUESTION 2 YES  )  built with instructions from https://www.youtube.com/watch?v=gBzsE0oieio -->
 
-   <div id="selfcare-carousel" class="container special-hide">
+   <div id="selfcare-carousel" class="container">
 
         <div class= "carousel" >
                     <div class="carousel__track-container">
@@ -170,14 +170,10 @@
 
                     </div>
             </div>
+                              <button type="button" class="hidden" value="submit" id="GratitudeButton">Next</button><br><br>
 
     </div>
    
-        <!-- NEXT BUTTON TO LEAD TO GRATITUDE LIST -->
-
-        <button type="button" class="hidden" value="submit" id="GratitudeButton">Next</button><br><br>
-
-
 
             <!-- GRATITUDE LIST  -->
 
@@ -185,15 +181,15 @@
 
     <div id="gratitude" class="hidden"> 
         
-            <p>I hope you were able to forget about <span id="put-worries"> </span> </p> <br> <h1> we would like you to think about 5 things in your life you are greatful for: </h1>
+            <p>I hope you were able to forget about <span id="put-worries"> </span> <br> we would like you to think about 5 things in your life you are greatful for: </p>
 
                 <!-- INPUT FIELD TO ENTER TASK AND DROPDOWN FILTER -->
 
-        <div class="grat-form">
-        <form class="center">
+        <div class="grat-form center">
+        <form>
             <input type="text" placeholder="Enter it here..." class="gratitude_input" />
             <button class="gratitude_button" type="submit">
-                <i class="fas fa-plus-square"></i>
+                <i class="fas fa-plus-circle"></i>
             </button>
         </form>
         </div>
