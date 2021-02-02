@@ -65,6 +65,8 @@ button  {
     margin: 10px 30px;
     cursor: pointer;
 }
+
+/* Question 1 */
    
 .question-1,
 #option-question-2{
@@ -331,7 +333,6 @@ header {
   font-size: 30px;
   text-align: center;
   padding: 10px;
-  border-bottom: 1px solid #ebebeb;
 }
 
 .quotes {
