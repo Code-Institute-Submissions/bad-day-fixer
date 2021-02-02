@@ -1,3 +1,5 @@
+
+
 /// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 
 
 var btn1Yes = document.getElementById('button-badday-yes');
@@ -39,7 +41,7 @@ btn2No.addEventListener('click', function(){
 
 
 
-// FUNCTION TO SHOW QUESTION 3 AFTER 'SUBMIT' BUTTON IS CLICKED 
+// FUNCTION TO SHOW GIF & QUESTION 3 AFTER 'SUBMIT WORRIES' BUTTON IS CLICKED 
 
 
  $("#summongif").click(function(){
@@ -50,15 +52,16 @@ btn2No.addEventListener('click', function(){
   let userWorries=document.getElementById("worries").value;
   localStorage.setItem('userWorries',userWorries);
   console.log(`User Worries:  ${userWorries}`);
+
+
   $("#gif-container").show();
-  console.log('it is working');
-
-//Code for showing gif
-
   $(".container.q1").hide()
   $("#option1-yes").hide();
   $(".image-container").hide();
   $("#option-fix-yes").hide()
+
+  // SHOW SELFCARE QUESTION
+
   $("#question3").show();
 
 })
@@ -71,8 +74,9 @@ var opt3Yes = document.getElementById('selfcare-carousel');
 var opt3No  = document.getElementById('option-space-facts');
 
 btn3Yes.addEventListener('click', function(){
-  opt3Yes.className = ''; 
-  opt3No.className = 'hidden';
+
+  document.querySelector('#selfcare-carousel').classList.remove('invisible');
+  
   $("#question3").hide();
   $("#gif-container").hide()
 });
@@ -82,7 +86,6 @@ btn2No.addEventListener('click', function(){
   opt2Yes.className = 'hidden';
   $("#option-question-2").hide();
 });
-
 
 
 // FUNCTION TO PRESS NEXT BUTTON TO GO TO GRATITUDE LIST 
@@ -99,8 +102,6 @@ $('#next-button').click(function () {
   $(".image-container").show();
 
 })
-
-
 
 
 /* SELF CARE CAROUSEL */
@@ -214,7 +215,7 @@ $('#selfcare-carousel').bind('slid', function (e) {
 })
 
 
-// Button to lead to gratitude list
+// BUTTON TO LEAD TO GRATITUDE LIST AFTER LAST CAROUSEL SLIDE
 
 var nextBtnCarousel = document.getElementById('GratitudeButton');
 var fortuneCookiediv = document.getElementById ('gratitude')
@@ -230,15 +231,10 @@ nextBtnCarousel.addEventListener('click', function(){
 });
 
 
-/* FUNCTION TO INSERT WORRIES INTO DIV */ 
+/* FUNCTION TO INSERT WORRIES INTO DIV JUST BEFORE GRATITUDE LIST */ 
 
   let userFeedBack=localStorage.getItem("userWorries");
   document.getElementById("put-worries").innerHTML = userFeedBack;
-
-
-
-
-
 
 
 
@@ -268,12 +264,7 @@ function addgratitude(event) {
     if(gratitudeInput.value === ""){
         return null
     }
-    //check mark BUTTON
-    //const completedButton = document.createElement('button');
-    //completedButton.innerHTML = '<i class="fas fa-check"></i>';
-    //completedButton.classList.add('complete_btn')
-   // gratitudeDiv.appendChild(completedButton);
-   
+
     //delete BUTTON
     const deleteButton = document.createElement('button');
     deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
@@ -296,17 +287,26 @@ function deleteCheck(e) {
         gratitude.addEventListener('transitionend', function () {
             gratitude.remove()
         })
-    }
-    //COMPLETE ITEM
-    if (item.classList[0] === "complete_btn") {
-        const gratitude = item.parentElement;
-        gratitude.classList.toggle("completedItem")
-    }
+    }  
+
+}
+//MAKE BUTTON APPEAR AFTER 5 ITEMS HAVE BEEN ADDED
+
+function addButton(){
+    console.log('.gratitude_container')
+    const glist = document.querySelectorAll('.gratitude_container > ul')
+    console.log('glist')
+    const gratListArray = Array.from(glist);
+    console.log('gratListArray');
+    if (gratListArray === 4) {
+        FortuneButton.classList.remove('hidden');
+
 }
 
-// FORTUNE COOKIE GENERATOR
 
-/*
+// FORTUNE COOKIE GENERATOR WITH API //
+
+
 const newQuoteButton = document.querySelector('#js-new-quote');
 newQuoteButton.addEventListener('click', getQuote);
 
@@ -341,10 +341,10 @@ async function getQuote() {
 function displayQuote(quote) {
   const quoteText = document.querySelector('#js-quote-text');
   quoteText.textContent = quote;
-} */
+} }
 
 
-const baseURL = "	https://api.fungenerators.com";
+/*const baseURL = "	https://api.fungenerators.com";
 
 function getData(type, cb) {
     var xhr = new XMLHttpRequest();
@@ -362,5 +362,4 @@ function getData(type, cb) {
 function writeToDocument(type) {
     getData(type, function(jsquotetext) {
         document.getElementById("jsquotetext").innerHTML = jsquotetext;
-    })
-}
+    }) */ 
