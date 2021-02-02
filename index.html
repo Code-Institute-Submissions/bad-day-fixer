@@ -14,8 +14,6 @@
     <header>
         <nav class="navigation-bar">
             <a class="active" href="index.html"> Home </a>
-            <a href="#about">About</a>
-            <a href="#contact">Write Us</a>
         </nav>
     </header>
 
@@ -27,7 +25,7 @@
              width="307" height="240" /> 
     </div> 
 
-        <!-- QUESTION 1 -->
+        <!-- QUESTION 1 "Are you having a bad day?" -->
 
 
     <div class="container question-1 text-center"> 
@@ -40,7 +38,7 @@
         <p>And now?</p>
     </div>
 
-        <!-- QUESTION 2 -->
+        <!-- QUESTION 2 "Would you like us to fix it?" -->
 
 
     <div class="container option-question-2 text-center hidden" id="option-question-2">
@@ -49,7 +47,7 @@
         <button id="button-fix-no">No</button>
     </div>
 
-    <!-- SUBMIT WORRIES ( IF USER DOES WANT TO FIX BAD DAY ) -->
+    <!-- WRITE DOWN WORRIES ( If user answered yes ) -->
 
     
     <div id="option-fix-yes" class="hidden">
@@ -66,19 +64,19 @@
 
 
     <div id="gif-container" class="container text-center hidden">
-        <img id="gif" src="https://media.giphy.com/media/9Y1CreFnfKNPOkuIGX/giphy.gif">
+        <img id="gif" src="https://media.giphy.com/media/z23hGvopHu7w4/giphy.gif">
     </div>
         
     
 
     <div id="question3" class="container q1 text-center" style="display:none"> 
-        <h1> Thanks for sharing! <br> Would you be interested in trying some self care activities?</h1><br>
+        <h1> Thanks so much for sharing! <br> Let's try to clear your head. <br> Would you like to try a self-care activity?</h1><br>
         <button id="selfcare-yes"> Yes </button> 
         <button id="selfcare-no">No</button>
     </div>
 
 
-<!-- SPACE FACTS ( IF USER DOES NOT WANT TO FIX BAD DAY ) -->
+<!-- SPACE FACTS ( If user does not want to fix bad day or does not want to try self-care activities) taken from https://www.buzzfeed.com/kellyoakes/space-facts-that-will-make-you-feel-really-small -->
 
 
     <div id="option-space-facts" class="container-fluid hidden">
@@ -86,9 +84,9 @@
             <div class="col-sm-12 d-flex justify-content-center">
                 <h1>Space Facts</h1> <br> </div>
             <div class="col-sm-12 d-flex justify-content-center">
-                <p>The brilliant thing about learning about the universe is that it will make you feel 
-                    really small & your problems. <br> How important is whatever ruined your day in the 
-                    grand scale of things...?</p> 
+                <p>The brilliant thing about learning about the universe is that it will make you and your problems feel 
+                    really small & insignificent. <br> How important is whatever ruined your day in the 
+                    grand scale of things, really...?</p> 
             </div>
         </div>
     
@@ -136,9 +134,9 @@
     </div>
 
 
-<!-- SELF CARE TIPS CAROUSEL ( IF USER CLICKED QUESTION 2 YES  )  built with instructions from https://www.youtube.com/watch?v=gBzsE0oieio -->
+<!-- SELF CARE TIPS CAROUSEL ( If user clicked 'Yes' to selfacre activities )  built with instructions from https://www.youtube.com/watch?v=gBzsE0oieio -->
 
-   <div id="selfcare-carousel" class="container">
+   <div id="selfcare-carousel" class="container invisible">
 
         <div class= "carousel" >
                     <div class="carousel__track-container">
@@ -170,22 +168,21 @@
 
                     </div>
             </div>
-                              <button type="button" class="hidden" value="submit" id="GratitudeButton">Next</button><br><br>
-
+                        <button type="button" class="hidden" value="submit" id="GratitudeButton">Next</button><br><br>
     </div>
    
 
-            <!-- GRATITUDE LIST  -->
+            <!-- GRATITUDE LIST made with using this tutorial https://freshman.tech/todo-list/ -->
 
 
 
     <div id="gratitude" class="hidden"> 
         
-            <p>I hope you were able to forget about <span id="put-worries"> </span> <br> we would like you to think about 5 things in your life you are greatful for: </p>
+            <p>I hope you were able to forget about <span id="put-worries"> </span> <br><br> Now we would like you to think about 5 things in your life you are greatful for: </p>
 
                 <!-- INPUT FIELD TO ENTER TASK AND DROPDOWN FILTER -->
 
-        <div class="grat-form center">
+    <div class="grat-form center">
         <form>
             <input type="text" placeholder="Enter it here..." class="gratitude_input" />
             <button class="gratitude_button" type="submit">
