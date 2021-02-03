@@ -36,6 +36,7 @@
 img.img-responsive{
     z-index: 2;
     position: relative;
+    margin-bottom: 10px;
 }
 
 
@@ -43,7 +44,7 @@ img.img-responsive{
 
 h1 {
     font-family:'Lato', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     font-weight: 300;
 }
@@ -55,7 +56,11 @@ p{
 }
 
 button  {
+
     
+
+    background-color: black;
+    color:white;
     border: 2px solid black;
     padding: 15px 20px;
     text-align: center;
@@ -64,6 +69,7 @@ button  {
     font-size: 16px;
     margin: 10px 30px;
     cursor: pointer;
+
 }
 
 /* Question 1 */
@@ -112,6 +118,9 @@ img#gif {
 
     width: 300px;
     height: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: solid black 2px;
 
 }
 
@@ -127,7 +136,7 @@ img#gif {
 
 .carousel{
     position: relative;
-    height:600px;
+    height:400px;
     width: 80%;
     margin: 0 auto;
 }
@@ -169,20 +178,26 @@ object-fit: scale-down;
     background:transparent;
     border: 0;
     cursor: pointer;
-    padding: 0 important!
+    padding: 0 !important;
+    background-color: white;
 }
 
 
 .carousel__button--left{
     left: -40px;
+    color:black !important;
+
 }
 
 .carousel__button--right{
     right: -40px;
+    color:black !important;
+
 }
 
 .carousel__button img{
     width: 12px;
+    color:black !important;
 }
 
 button.carousel__indicator{
@@ -217,6 +232,15 @@ div#next {
 
     text-align:center;
 }
+
+#GratitudeButton{
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    bottom:0px;
+}
+
 
 
 /* GRATITUDE LIST */
@@ -316,24 +340,27 @@ select{
 
 /*fortune cookie creator */
 
+.cookie-image{
+
+    text-align: center;
+}
 
 #fortune-generator {
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
-header {
+/*header {
   width: 100%;
   font-size: 30px;
   text-align: center;
   padding: 10px;
-}
+}*/
 
 .quotes {
   padding: 20px 50px;
@@ -372,7 +399,7 @@ header {
 }
 
 .new-quote:hover {
-  background-color: #6d3b0e;
+  background-color: red;
 }
 
 .new-quote:disabled {
