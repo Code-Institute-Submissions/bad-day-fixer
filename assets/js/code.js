@@ -40,11 +40,39 @@ btn2No.addEventListener('click', function(){
 });
 
 
+//BUTTON TO GO FROM SPACE FACTS TO FORTUNE COOKIE
+
+ var G2FButton = document.getElementById('G2FButton');
+    var fortuneCookieSection = document.getElementById('fortune-generator');
+
+  G2FButton.addEventListener('click', function(){
+        fortuneCookieSection.className = ''; 
+    $("#self-care").hide();
+    $(".next-button").hide()
+    $("#gif-container").hide()
+    $("#gratitude").hide();
+    $(".image-container").hide();
+    $("#selfcare-carousel").hide();
+    $("#FortuneButton").hide();
+    $("#option-space-facts").hide();
+    
+})
+
+
+
 
 // FUNCTION TO SHOW GIF & QUESTION 3 AFTER 'SUBMIT WORRIES' BUTTON IS CLICKED 
 
 
+// Code for showing alert when worries-field is left empty
+
  $("#summongif").click(function(){
+
+
+    if($('#worries').val() == ''){
+        alert('Please enter something :) ');
+        return false;
+    }
 
 
 //Code for storing form entry 
@@ -60,11 +88,14 @@ btn2No.addEventListener('click', function(){
   $(".image-container").hide();
   $("#option-fix-yes").hide()
 
-  // SHOW SELFCARE QUESTION
+  // Code for showing self-care question
 
   $("#question3").show();
+    
+    
+});
 
-})
+
 
 // FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 3  (SELFCARE YES? / NO?)
 
@@ -81,16 +112,18 @@ btn3Yes.addEventListener('click', function(){
   $("#gif-container").hide()
 });
 
-btn2No.addEventListener('click', function(){
+btn3No.addEventListener('click', function(){
   opt2No.className = '';
   opt2Yes.className = 'hidden';
   $("#option-question-2").hide();
+  $("#question3").hide();
+  $("#gif-container").hide()
 });
 
 
 // FUNCTION TO PRESS NEXT BUTTON TO GO TO GRATITUDE LIST 
 
-
+/*
 
 var nextsection = document.getElementById('gratitude');
 
@@ -101,10 +134,60 @@ $('#next-button').click(function () {
   $("#gif-container").hide()
   $(".image-container").show();
 
-})
+}) */
+
+// SELF CARE CAROUSEL //
+
+   const selfCareYes=document.querySelector("#selfcare-yes");
+
+    selfCareYes.addEventListener('click',function(){
+
+      let sliderParent=document.querySelector("#selfcare-carousel");
+
+      let mainSlider=document.createElement('div');
+      mainSlider.classList.add('carousel');
+      mainSlider.innerHTML=
+      
+  `<div class="carousel__track-container">
+      <ul class="carousel__track">
+          <li class="carousel__slide current-slide">
+              <img class="carousel__image" src="assets/images/4.png" alt="">
+          </li>
+          <li class="carousel__slide">
+              <img class="carousel__image" src="assets/images/1.png" alt="">
+          </li>
+          <li class="carousel__slide">
+              <img class="carousel__image" src="assets/images/3.png" alt="">
+          </li>
+          <li class="carousel__slide">
+              <img class="carousel__image" src="assets/images/2.png" alt="">
+          </li>
+      </ul>
+  </div>
+  
+  <button class="carousel__button carousel__button--right"><i class="fas fa-chevron-right"></i></button>
+  <button class="carousel__button carousel__button--left"><i class="fas fa-chevron-left"></i></button>
+
+<div class="carousel__nav">
+  <button class="carousel__indicator current-slide"></button>
+  <button class="carousel__indicator"></button>
+  <button class="carousel__indicator"></button>
+  <button class="carousel__indicator"></button>
+
+</div>
+  
+  `;
+
+  sliderParent.append(mainSlider);
+      
 
 
-/* SELF CARE CAROUSEL */
+  //SelfCarousel Code here
+
+      $("#selfcare-carousel").ready(function(){
+        
+
+              /* SELF CARE CAROUSEL */
 
 const track = document.querySelector('.carousel__track');
 const slides = Array.from(track.children);
@@ -213,7 +296,12 @@ $('#selfcare-carousel').bind('slid', function (e) {
     document.getElementById("GratitudeButton").innerHTML ='';
     alert('slide4 displayed!')}
 })
+      })
+    });
 
+
+
+    
 
 // BUTTON TO LEAD TO GRATITUDE LIST AFTER LAST CAROUSEL SLIDE
 
@@ -231,7 +319,7 @@ nextBtnCarousel.addEventListener('click', function(){
 });
 
 
-/* FUNCTION TO INSERT WORRIES INTO DIV JUST BEFORE GRATITUDE LIST */ 
+// FUNCTION TO INSERT WORRIES INTO DIV JUST BEFORE GRATITUDE LIST // 
 
   let userFeedBack=localStorage.getItem("userWorries");
   document.getElementById("put-worries").innerHTML = userFeedBack;
@@ -252,6 +340,14 @@ nextBtnCarousel.addEventListener('click', function(){
 //functions
 
 function addgratitude(event) {
+
+//MAKE BUTTON APPEAR AFTER 5 ITEMS HAVE BEEN ADDED
+
+    let lenght=$(".gratitude").length;
+    if(lenght===4)
+    {
+    FortuneButton.classList.remove('hidden');
+    }
     event.preventDefault();
     //gratitude DIV
     const gratitudeDiv = document.createElement('div');
@@ -290,18 +386,26 @@ function deleteCheck(e) {
     }  
 
 }
-//MAKE BUTTON APPEAR AFTER 5 ITEMS HAVE BEEN ADDED
 
-function addButton(){
-    console.log('.gratitude_container')
-    const glist = document.querySelectorAll('.gratitude_container > ul')
-    console.log('glist')
-    const gratListArray = Array.from(glist);
-    console.log('gratListArray');
-    if (gratListArray === 4) {
-        FortuneButton.classList.remove('hidden');
+//BUTTON TO GO FROM GRATITUDE LIST TO FORTUNE COOKIE GENERATOR
 
-}
+    var fortuneButton = document.getElementById('FortuneButton');
+    var fortuneCookieSection = document.getElementById('fortune-generator');
+
+  fortuneButton.addEventListener('click', function(){
+        fortuneCookieSection.className = ''; 
+    $("#self-care").hide();
+    $(".next-button").hide()
+    $("#gif-container").hide()
+    $("#gratitude").hide();
+    $(".image-container").hide();
+    $("#selfcare-carousel").hide();
+    $("#FortuneButton").hide();
+})
+
+
+
+
 
 
 // FORTUNE COOKIE GENERATOR WITH API //
@@ -338,10 +442,10 @@ async function getQuote() {
   }
 }
 
-function displayQuote(quote) {
+function displayQuote(fortune) {
   const quoteText = document.querySelector('#js-quote-text');
-  quoteText.textContent = quote;
-} }
+  quoteText.textContent = fortune;
+} 
 
 
 /*const baseURL = "	https://api.fungenerators.com";
