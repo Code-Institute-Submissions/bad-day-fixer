@@ -119,21 +119,6 @@ btn3No.addEventListener('click', function(){
 });
 
 
-// FUNCTION TO PRESS NEXT BUTTON TO GO TO GRATITUDE LIST 
-
-/*
-
-var nextsection = document.getElementById('gratitude');
-
-$('#next-button').click(function () {
-    nextsection.className = ''; 
-    $("#self-care").hide();
-  $(".next-button").hide()
-  $("#gif-container").hide()
-  $(".image-container").show();
-
-}) */
-
 // SELF CARE CAROUSEL //
 
    const selfCareYes=document.querySelector("#selfcare-yes");
@@ -408,59 +393,19 @@ function deleteCheck(e) {
 // FORTUNE COOKIE GENERATOR WITH API //
 
 
-const newQuoteButton = document.querySelector('#js-new-quote');
-newQuoteButton.addEventListener('click', getQuote);
+const quoteText = document.querySelector('#jsquotetext');
+var myusername = $("#username").val();
 
-function getQuote() {
-  console.log("quote button was clicked");
-}
+$("#js-new-quote").click(function() {
 
-const endpoint = 'https://bad-fortune-cookie.herokuapp.com/fortunes/?format=json'
-
-async function getQuote() {
-  // The `try` block executes the statements within it as usual.
-  // If an exception is thrown, the statements defined in
-  // the `catch` block will be executed.
-  // Learn more here: https://javascript.info/try-catch
-  try {
-    const response = await fetch(endpoint)
-    // If the response is not 200 OK...
-    if (!response.ok) {
-      // ...throw an error. This causes control flow
-      // to skip to the `catch` block below.
-      throw Error(response.statusText)
-    }
-
-    const json = await response.json();
-    displayQuote(json);
-  } catch (err) {
-    console.log(err)
-    alert('Failed to fetch new quote');
-  }
-}
-
-function displayQuote(fortune) {
-  const quoteText = document.querySelector('#js-quote-text');
-  quoteText.textContent = fortune;
-} 
-
-
-/*const baseURL = "	https://api.fungenerators.com";
-
-function getData(type, cb) {
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText));
+    $.ajax({
+        type:"GET",
+        url: "https://bad-fortune-cookie.herokuapp.com/fortunes/?format=json",
+        data: myusername,
+        cache: false,
+        success: function(data){
+        var x = Math.floor((Math.random() * 20) + 0);
+         quoteText.textContent = data[x].fortune;
         }
-    };
-
-    xhr.open("GET", baseURL + type + "/");
-    xhr.send();
-}
-
-function writeToDocument(type) {
-    getData(type, function(jsquotetext) {
-        document.getElementById("jsquotetext").innerHTML = jsquotetext;
-    }) */ 
+    })
+})
