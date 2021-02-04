@@ -1,6 +1,6 @@
 
 
-/// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 
+// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 1 
 
 var btn1Yes = document.getElementById('button-badday-yes');
 var btn1No  = document.getElementById('button-badday-no');
@@ -20,7 +20,7 @@ btn1No.addEventListener('click', function(){
 
 
 
-//FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 2 
+// FUNCTION TO SHOW CONTENT BASED ON WHAT USER ANSWERS TO QUESTION 2 
 
 var btn2Yes = document.getElementById('button-fix-yes');
 var btn2No  = document.getElementById('button-fix-no');
@@ -40,12 +40,11 @@ btn2No.addEventListener('click', function(){
 });
 
 
-//BUTTON TO GO FROM SPACE FACTS TO FORTUNE COOKIE
+// BUTTON TO GO FROM SPACE FACTS TO FORTUNE COOKIE
 
- var G2FButton = document.getElementById('G2FButton');
-    var fortuneCookieSection = document.getElementById('fortune-generator');
-
-  G2FButton.addEventListener('click', function(){
+var G2FButton = document.getElementById('G2FButton');
+var fortuneCookieSection = document.getElementById('fortune-generator');
+G2FButton.addEventListener('click', function(){
         fortuneCookieSection.className = ''; 
     $("#self-care").hide();
     $(".next-button").hide()
@@ -57,7 +56,6 @@ btn2No.addEventListener('click', function(){
     $("#option-space-facts").hide();
     
 })
-
 
 
 
@@ -75,7 +73,7 @@ btn2No.addEventListener('click', function(){
     }
 
 
-//Code for storing form entry 
+  // Code for storing form entry 
 
   let userWorries=document.getElementById("worries").value;
   localStorage.setItem('userWorries',userWorries);
@@ -148,35 +146,34 @@ $('#next-button').click(function () {
       mainSlider.classList.add('carousel');
       mainSlider.innerHTML=
       
-  `<div class="carousel__track-container">
-      <ul class="carousel__track">
-          <li class="carousel__slide current-slide">
-              <img class="carousel__image" src="assets/images/4.png" alt="">
-          </li>
-          <li class="carousel__slide">
-              <img class="carousel__image" src="assets/images/1.png" alt="">
-          </li>
-          <li class="carousel__slide">
-              <img class="carousel__image" src="assets/images/3.png" alt="">
-          </li>
-          <li class="carousel__slide">
-              <img class="carousel__image" src="assets/images/2.png" alt="">
-          </li>
-      </ul>
-  </div>
-  
-  <button class="carousel__button carousel__button--right"><i class="fas fa-chevron-right"></i></button>
-  <button class="carousel__button carousel__button--left"><i class="fas fa-chevron-left"></i></button>
+        `<div class="carousel__track-container">
+            <ul class="carousel__track">
+                <li class="carousel__slide current-slide">
+                    <img class="carousel__image" src="assets/images/4.png" alt="">
+                </li>
+                <li class="carousel__slide">
+                    <img class="carousel__image" src="assets/images/1.png" alt="">
+                </li>
+                <li class="carousel__slide">
+                    <img class="carousel__image" src="assets/images/3.png" alt="">
+                </li>
+                <li class="carousel__slide">
+                    <img class="carousel__image" src="assets/images/2.png" alt="">
+                </li>
+            </ul>
+        </div>
+        
+        <button class="carousel__button carousel__button--right"><i class="fas fa-chevron-right"></i></button>
+        <button class="carousel__button carousel__button--left"><i class="fas fa-chevron-left"></i></button>
 
-<div class="carousel__nav">
-  <button class="carousel__indicator current-slide"></button>
-  <button class="carousel__indicator"></button>
-  <button class="carousel__indicator"></button>
-  <button class="carousel__indicator"></button>
-
-</div>
-  
-  `;
+        <div class="carousel__nav">
+            <button class="carousel__indicator current-slide"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+        </div>
+        
+        `;
 
   sliderParent.append(mainSlider);
       
