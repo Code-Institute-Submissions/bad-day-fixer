@@ -8,7 +8,7 @@
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
--   W3C CSS Validation service has been used to check the  **CSS**  of the project and  **no error**  was found. The result can be seen here.  [\[CSS Test\]](https://github.com/lisa1Q84/bad-day-fixer/blob/master/assets/images/CSS_TEST.png) 
+-   W3C CSS Validation service has been used to check the  **CSS**  of the project and  **3 errors**  were found. I was unable to locate the code in my css. The result can be seen here.  [\[CSS Test\]](https://github.com/lisa1Q84/bad-day-fixer/blob/master/assets/images/CSS_TEST.png) 
 
 The Project was tested for Browser compatibility on multiple versions of IE, Chrome and Safari
 
