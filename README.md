@@ -159,14 +159,9 @@ All testing was documented in a separate filed that can be accessed [here.](http
 
 ## [](https://github.com/lisa1Q84/bad-day-fixer/blob/master/README.md#bugs)Bugs
 
-Bug: Scrollbar on the bottom when in the mobile view. Fixed this by moving the image width and height to CSS and by making them smaller. 
+Bug: Carousel loads slowly. First I had my carousel in the html like the other elements. I added the class hide and wanted to un-hide the carousel div on button click. What happened was, that the carousel would be broken whenever I added the 'hidden' class. The only fix I found for that was to add the 'invisible' class instead which resulted in a lot of empty space in the bottom of the page. I therefore decided to create the carousel element in the js with createElement. It loads a little slow and I was unable to fix that unfortunately.
 
-Bug: Carousel images look stretched in mobile view. I did not find out how to fix this because every attempt to fix it ended in me disabling the carousel. I kept it because the important part in the carousel are the reviews. 
-
-Bug: I tried to activate the menu (so that the menu item that the user is on is highlighted) but was not able to so now the menu does change colour only when hovering on the items.
-
-Bug: On creating a parallax effect for the background when scrolling rather than keeping the background fixed there is a white band being pulled up when scrolling to bottom.  
-Fix: Changed position on the ‘sales-pitch’ element from ‘absolute’ to ‘relative’.
+Bug: There is a blank space above the fortune cookie I was not able to cover using CSS. 
 
 
 ## [](https://github.com/lisa1Q84/bad-day-fixer/blob/master/README.md#deployment)Deployment
@@ -255,7 +250,7 @@ https://www.thestyleedit.com/one-pot-wonders/
 
 I would like to thank:
 
--   Code institute for giving me the chance to learn something entirely new, my mentor Ignatius for his support and my friends for making me a lot of coffee. 
+-   Code institute for giving me the chance to learn something entirely new, my mentor Ignatius for his support and my housemates for making me a lot of coffee. 
 
 - All the amazing people that put tutorials out there for me to learn how to code. 
 
