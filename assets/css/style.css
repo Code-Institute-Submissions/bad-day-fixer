@@ -428,6 +428,10 @@ div#small-device-text3{
     display: none;
 }
 
+div.controls{
+    padding: 20px 200px;
+}
+
 }
 
 
@@ -442,4 +446,9 @@ div#small-device-text3{
 
 input[type=text] {
     width: 80%;}
+
+
+div.controls {
+    padding: 20px 300px;  
+    }
 }
