@@ -150,7 +150,7 @@ Imagery:
 
 -   W3 HTML Validation was done via  [https://validator.w3.org/](https://validator.w3.org/)
 -   W3 CSS Validation was done via  [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)  
-- The Rathmines Eye Centre Logo was created with https://www.canva.com/ as they had none.
+-   The Carousel images were created with https://www.canva.com/ as they had none.
 
 
 ## [](https://github.com/lisa1Q84/bad-day-fixer/blob/master/README.md#testing)Testing
