@@ -4,11 +4,11 @@
 
 [W3C Markup Validation Service](https://validator.w3.org/)
 
--   W3C Markup Validation Service has been used for the testing of the  **HTML**  and  **no error**  was found. The result can be seen here  [\[HTML Test\]](https://github.com/lisa1Q84/bad-day-fixer/blob/master/images/HTML_TEST.png)
+-   W3C Markup Validation Service has been used for the testing of the  **HTML**  and  **no error**  was found. The result can be seen here  [\[HTML Test\]](https://github.com/lisa1Q84/bad-day-fixer/blob/master/assets/images/HTML_TEST.png)
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
--   W3C CSS Validation service has been used to check the  **CSS**  of the project and  **no error**  was found. The result can be seen here.  [\[CSS Test\]](https://github.com/lisa1Q84/bad-day-fixer/blob/master/images/CSS_TEST.png) 
+-   W3C CSS Validation service has been used to check the  **CSS**  of the project and  **no error**  was found. The result can be seen here.  [\[CSS Test\]](https://github.com/lisa1Q84/bad-day-fixer/blob/master/assets/images/CSS_TEST.png) 
 
 The Project was tested for Browser compatibility on multiple versions of IE, Chrome and Safari
 
@@ -75,7 +75,9 @@ Testing client stories from UX part of README.md
 -   I first tried using the XMLHttpRequest Method to fetch the quote from the API, however I was unable to make it work and then decided to use the jquery ajax fetch function. To make it work I replaced the slim jquery to regular jquery.
 
 - Due to poor time management from my side I was unable to add more sections to the Menu Bar such as an "About" or "Contact Us" page which would have been a great addition to the page.
-- My mentor suggested to, instead of bringing the users to a new website in the beginning, I should use an iframe to display the newspaper part on the main page. 
+
+- My mentor suggested to, instead of bringing the users to a new website in the beginning, I should use an iframe to display the newspaper part on the main page.If I had more time I would have attempted that.
+
 
 **Bug report**
 
@@ -84,6 +86,8 @@ Testing client stories from UX part of README.md
 - Bug: Carousel images look stretched in mobile view. I did not find out how to fix this because every attempt to fix it ended in me disabling the carousel. I kept it because the important part in the carousel are the reviews. 
 
 - Bug: The worry-form does not accept an entry when the key enter is pressed.
+
+-Bug: After clicking the fortune cookie button, it takes around 5 seconds to load the first quote.
 
 
 
