@@ -20,7 +20,7 @@
 
 ## [](https://github.com/lisa1Q84/MS1_RathminesEyeCentre_Take2/master/README.md#description)Description
 
-Bad Day Fixer is intended to be a humorous interactive website to bring a smile to someones face who is experience a bad day. 
+Bad Day Fixer is intended to be a humorous interactive website with the intention to bring a smile to someones face who is experiencing a bad day. 
 
 The website has a beginning and an end and the user path leads them in one direction. With a number of yes and no questions, there is different paths based on the answers the user gives. 
 
@@ -49,10 +49,10 @@ External User Goal:
 
 Site Owner Goal:
 
-1.  The site owner would like to offer a welcoming website that keeps the users attention
-2.  The site owner would like to create an engaging, interactive experience
-3. The site owner would like users to send this websites to their friends when they have a bad day.
-3.  The site owner would like to improve the users day
+1.  The site owner would like to offer a welcoming website that keeps the users attention.
+2.  The site owner would like to create an engaging, interactive experience.
+3.  The site owner would like users to send this websites to their friends when they have a bad day.
+3.  The site owner would like to improve the users day.
 4.  The site owner would like the user to click start after finishing to see the other paths.
 5.  The site owner would like the site to be accessible from all devices. 
 ----------
@@ -61,7 +61,7 @@ Site Owner Goal:
 
 ----------
 
-The main focus of this project is to provide a simple, interactive website that flows in one direction that has the user engaged from start to end. 
+The main focus of this project is to provide a simple, interactive website that has the user engaged from start to end. 
 
 To achieve that, different types of forms, questions and gifs were included as well as a random funny fortune quote generator. 
 
@@ -144,8 +144,8 @@ Imagery:
 -   FontAwesome - Used to place icons from this library in the "Space facts" section and for buttons.
 -   Google Fonts – I used Roboto and Space Mono One SC 
 -   Git – Version control used to track changes, commit and push code to Github.
-- Javascript - Was used in order to create interactive elements.
--  Jquery - JavaScript Library used
+-   Javascript - Was used in order to create interactive elements.
+-   Jquery - JavaScript Library used
 
 
 -   W3 HTML Validation was done via  [https://validator.w3.org/](https://validator.w3.org/)
@@ -161,7 +161,7 @@ All testing was documented in a separate filed that can be accessed [here.](http
 
 Bug: Carousel loads slowly. First I had my carousel in the html like the other elements. I added the class hide and wanted to un-hide the carousel div on button click. What happened was, that the carousel would be broken whenever I added the 'hidden' class. The only fix I found for that was to add the 'invisible' class instead which resulted in a lot of empty space in the bottom of the page. I therefore decided to create the carousel element in the js with createElement. It loads a little slow and I was unable to fix that unfortunately.
 
-Bug: There is a blank space above the fortune cookie I was not able to cover using CSS. 
+Bug: There is a blank space above the fortune cookie I was not able to cover using CSS. The first quote can take up to 5 seconds to load.
 
 
 ## [](https://github.com/lisa1Q84/bad-day-fixer/blob/master/README.md#deployment)Deployment
@@ -185,9 +185,9 @@ Run in Gitpod:
 2.  Install the gitpod browser extension for Chrome browser.
 3.  Restart the Chrome browser.
 4.  Log into  [GitPod](https://www.gitpod.io/)  using your GitHub account.
-5.  Next open GitHub and locate the DoggyStyle repository for the website at  [https://github.com/lisa1Q84/bad-day-fixer]
+5.  Next open GitHub and locate the Bad Day Fixer repository for the website at  [https://github.com/lisa1Q84/bad-day-fixer]
 6.  Click on the green GitPod button in the top right hands side of the screen.
-7.  This will open a new GitPod workspace with the DoggyStyle repository files in it.
+7.  This will open a new GitPod workspace with the Bad Day Fixer repository files in it.
 
 Run in Local IDE:
 
